@@ -106,4 +106,5 @@ def limpiar_archivos_antiguos(carpeta=".", extension=".mp4", horas=3):
 
 if __name__ == "__main__":
     threading.Thread(target=limpiar_archivos_antiguos, daemon=True).start()
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
